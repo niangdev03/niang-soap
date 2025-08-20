@@ -1,0 +1,7 @@
+com/soap/soapdemo/SoapServer.class
+com/soap/Main.class
+com/soap/soapdemo/SectorService.class
+com/soap/entity/Sector.class
+com/soap/DAO/SectorDAO.class
+com/soap/Utils/DBUtil.class
+com/soap/entity/Classe.class
