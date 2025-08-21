@@ -30,4 +30,23 @@ public class ClasseService {
     public List<Classe> listClasses() {
         return dao.getAllClasses();
     }
+
+    @WebMethod
+    public String updateClasse(
+        @WebParam(name = "id") int id,
+        @WebParam(name = "name") String name,
+        @WebParam(name = "description") String description,
+        @WebParam(name = "sectorId") int sectorId
+    ) {
+        Sector sector = new Sector(sectorId, null);
+        Classe classe = new Classe(id, name, description, sector);
+        dao.updateClasse(classe);
+        return "Classe mise à jour avec succès: " + name + " (id=" + id + ")";
+    }
+
+    @WebMethod
+    public String deleteClasse(@WebParam(name = "id") int id) {
+        dao.deleteClasse(id);
+        return "Classe supprimée avec succès (id=" + id + ")";
+    }
 }
